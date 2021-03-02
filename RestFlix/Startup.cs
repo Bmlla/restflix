@@ -28,9 +28,9 @@ namespace RestFlix
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc(option => option.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContext<MovieContext>(options =>
-                options.UseNpgsql(Configuration.GetConnectionString("RestFlixDB")));
-            //services.AddDbContext<MovieContext>(option => option.UseInMemoryDatabase("MoviesList"));
+            //services.AddDbContext<MovieContext>(options =>
+                //options.UseNpgsql(Configuration.GetConnectionString("RestFlixDB")));
+            services.AddDbContext<MovieContext>(option => option.UseInMemoryDatabase("MoviesList"));
             services.AddControllers();
         }
 
